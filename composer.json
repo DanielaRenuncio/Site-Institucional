@@ -1,5 +1,7 @@
 {
-    "autoload":{
-        "Code\\": "src/"      
+    "autoload" : {
+        "psr-4": {
+            "Code\\" : "src/"
+        }
     }
 }

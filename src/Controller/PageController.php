@@ -9,6 +9,7 @@ class PageController
     public function index()
     {
         $view = new View('site/index.phtml');
+        $view->name = "Dani Renuncio";
         return $view->render();
     }
 }

@@ -13,13 +13,26 @@ $controller = isset($url[0]) && $url[0] ? $url[0] : 'page';
 
 $action = isset($url[1]) && $url[1] ? $url[1] : 'index';
 
+$param = isset($url[2]) && $url[2] ? $url[2] : null;
+
 //recebo o nome do controller que eu quero
-$controller = "Code\Controller\\".ucfirst($controller).'Controller';
+//verifica se a class controller de fato existe ou não
+if (!class_exists($controller = "Code\Controller\\".ucfirst($controller).'Controller'))
+{
+   die("404 - Página não encontrada.");
+}
+
+if (!method_exists($controller,$action))
+{
+   $action = 'index';
+   $param = $url[1];
+}
 print 'controller default: ' . $controller;
 print '<br> Método default: ' . $action;
+echo '<br>';
 
 
-$response = call_user_func_array([new $controller, $action],[]);
+$response = call_user_func_array([new $controller, $action],[$param]);
 print $response;
 
 //$execute = new $controller();

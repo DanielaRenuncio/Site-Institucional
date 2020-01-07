@@ -20,7 +20,7 @@ print '<br> Método default: ' . $action;
 
 
 $response = call_user_func_array([new $controller, $action],[]);
-print $response();
+print $response;
 
 //$execute = new $controller();
 //print $execute->index();

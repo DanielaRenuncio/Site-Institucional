@@ -2,11 +2,14 @@
 
 namespace Code\Controller;
 
+use Code\View\View;
+
 class PageController 
 {
-    public function show()
+    public function index()
     {
-        return '<h1>Hello World</h1>';
+        $view = new View('site/index.phtml');
+        return $view->render();
     }
 }
 

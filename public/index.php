@@ -26,8 +26,8 @@ if (!method_exists($controller,$action))
    $action = 'index';
    $param = $url[1];
 }
-print 'controller default: ' . $controller;
-print '<br> Método default: ' . $action;
+//print 'controller default: ' . $controller;
+//print '<br> Método default: ' . $action;
 echo '<br>';
 
 

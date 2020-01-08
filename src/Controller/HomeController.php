@@ -4,12 +4,11 @@ namespace Code\Controller;
 
 use Code\View\View;
 
-class PageController 
+class HomeController 
 {
     public function index()
     {
-        $view = new View('site/index.phtml');
-        $view->name = "Dani Renuncio";
+        $view = new View('site/index.phtml');       
         return $view->render();
     }
 }
